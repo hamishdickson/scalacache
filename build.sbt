@@ -30,6 +30,14 @@ lazy val core = CrossProject(id = "scalacache-core", file("core"), CrossType.Ful
     )
   )
 
+lazy val docs = Project(id = "scalacache-docs", base = file("."))
+  .enablePlugins(TutPlugin)
+  .settings(commonSettings: _*)
+  .settings(tutSourceDirectory := baseDirectory.value / "docs/tut")
+  .settings(tutTargetDirectory := baseDirectory.value)
+  .settings(publishArtifact := false)
+  .dependsOn(coreJVM)
+
 lazy val coreJVM = core.jvm
 lazy val coreJS = core.js
 

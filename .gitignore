@@ -4,6 +4,7 @@
 *.ipr
 *.jfr
 target
+docs/target
 coveralls-token.txt
 /*.html
 dump.rdb
